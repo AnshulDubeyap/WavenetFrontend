@@ -76,9 +76,10 @@ function UserDashboard() {
   }
 
   return (
-    <Box sx={{ maxWidth: 1200, margin: '0 auto', p: 2 }}>
-      <Typography variant="h4" sx={{ mb: 2 }}>User Dashboard</Typography>
-      {error && <Box sx={{ color: '#d32f2f', backgroundColor: '#fde7e9', p: 1, borderRadius: 1, mb: 2 }}>{error}</Box>}
+    <Box sx={{ display: 'flex', justifyContent: 'center', minHeight: '100vh', width: '100%' }}>
+      <Box sx={{ maxWidth: 1200, width: '100%', p: 2 }}>
+        <Typography variant="h4" sx={{ mb: 2 }}>User Dashboard</Typography>
+        {error && <Box sx={{ color: '#d32f2f', backgroundColor: '#fde7e9', p: 1, borderRadius: 1, mb: 2 }}>{error}</Box>}
 
       <UserFilters searchText={searchText} onSearchTextChange={setSearchText} filterRole={filterRole} onFilterRoleChange={setFilterRole} onApply={loadUsers} />
 
@@ -86,7 +87,8 @@ function UserDashboard() {
         <UserForm name={name} onNameChange={setName} email={email} onEmailChange={setEmail} password={password} onPasswordChange={setPassword} role={role} onRoleChange={setRole} onSubmit={handleCreate} />
       </Box>
 
-      <UserTable users={users} loading={loading} error={error} onChangeRole={handleUpdateRole} onDelete={handleDelete} />
+        <UserTable users={users} loading={loading} error={error} onChangeRole={handleUpdateRole} onDelete={handleDelete} />
+      </Box>
     </Box>
   )
 }
