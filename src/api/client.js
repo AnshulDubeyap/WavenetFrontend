@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://wavenet-backend-9wvk.onrender.com/api",
+  baseURL: "https://wavenetbackend.onrender.com",
   withCredentials: true,
 });
 
